@@ -80,10 +80,10 @@
     "format": "prettier \"**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)\" --write",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "cross-env NODE_ENV=test jest -u",
+    "test": "cross-env NODE_ENV=test jest",
+    "ci-test": "cross-env NODE_ENV=test jest -u -w 2",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "storybook": "start-storybook -p 6006",
-    "ci-test": "cross-env NODE_ENV=test jest -u -w 2",
     "build-storybook": "build-storybook"
   },
   "repository": {
