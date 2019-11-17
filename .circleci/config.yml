@@ -1,0 +1,90 @@
+version: 2.1
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:10.16.0
+commands:
+  gatsby-build-storybook-build:
+    steps:
+      - checkout
+      - run:
+          name: Create GitHub Deployment
+          command: ./tasks/deployment/start.sh > deployment
+      - restore_cache:
+          keys:
+            - yarn-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install Dependencies
+          command: yarn install && npm rebuild
+      - save_cache:
+          key: yarn-cache-{{ checksum "yarn.lock" }}
+          paths:
+            - ./node_modules
+      - restore_cache:
+          keys:
+            - gatsby-public-cache-{{ .Branch }}
+      - run:
+          name: Gatsby Build
+          command: GATSBY_CPU_COUNT=2 yarn build
+      - save_cache:
+          key: gatsby-public-cache-{{ .Branch }}
+          paths:
+            - ./public
+      - restore_cache:
+          keys:
+            - storybook-public-cache-{{ .Branch }}
+      - run:
+          name: Storybook Build
+          command: yarn build-storybook
+      - store_artifacts:
+          path: ./storybook-static
+      - save_cache:
+          key: storybook-public-cache-{{ .Branch }}
+          paths:
+            - ./storybook-static
+      - run:
+          name: Add GitHub Deployment success status
+          command: ./tasks/deployment/end.sh success
+          when: on_success
+      - run:
+          name: Add GitHub Deployment error status
+          command: ./tasks/deployment/end.sh error
+          when: on_fail
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - develop
+      - release:
+          filters:
+            branches:
+              only:
+                - develop
+jobs:
+  build:
+    executor: node-executor
+    working_directory: ~/repo
+    steps:
+      - gatsby-build-storybook-build
+      - run:
+          name: Check lint error
+          command: yarn lint
+      - run:
+          name: Testing
+          command: yarn test -u
+
+  release:
+    executor: node-executor
+    working_directory: ~/repo
+    steps:
+      - gatsby-build-storybook-build
+      - run:
+          name: Check lint error
+          command: yarn lint
+      - run:
+          name: Testing
+          command: yarn test -u
