@@ -83,6 +83,7 @@
     "test": "cross-env NODE_ENV=test jest -u",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "storybook": "start-storybook -p 6006",
+    "ci-test": "cross-env NODE_ENV=test jest --watchAll",
     "build-storybook": "build-storybook"
   },
   "repository": {
