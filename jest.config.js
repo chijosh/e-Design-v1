@@ -24,7 +24,7 @@ module.exports = {
 		// '<rootDir>/src/services/i18n.ts':
 		// 	'<rootDir>/config/testing/__mocks__/i18nMock.tsx',
 	},
-	// Where Jest detectes test files
+	// Where Jest detects test files
 	testMatch: [
 		'<rootDir>/src/**/__tests__/**/*.{ts,tsx,js,jsx}',
 		'<rootDir>/src/**/?(*.)(spec|test).{ts,tsx,js,jsx}',
