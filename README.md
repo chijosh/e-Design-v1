@@ -1,11 +1,26 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
+s<p align="center">
+<a href="https://reactjs.org/">
+<img alt="React" src="https://miro.medium.com/max/500/1*cPh7ujRIfcHAy4kW2ADGOw.png" width="100" />
+</a>
+<a href="https://www.gatsbyjs.org/">
+<img alt="Gatsby" src="https://codingthesmartway.com/wp-content/uploads/2019/02/gatsby-logo.png" width="100" />
+</a>
+<a href="https://www.contentful.com/">
+<img alt="Contenful" src="https://avatars1.githubusercontent.com/u/472182?s=280&v=4" width="100" />
+</a>
+<a href="https://www.circleci.com/">
+<img alt="CircleCI" src="https://circleci.com/circleci-logo-stacked-fb.png" width="100" />
+</a>
+<a href="https://www.netlify.com/">
+<img alt="Netlify" src="https://www.netlify.com/img/press/logos/logomark.png" width="100" />
+</a>
+<a href="https://storybook.js.org/">
+<img alt="Storybook" src="https://pbs.twimg.com/profile_images/1100804485616566273/sOct-Txm_400x400.png" width="100" />
+</a>
+
 </p>
 <h1 align="center">
-  Gatsby's default starter
+  Adventure Resort App v1
 </h1>
 
 Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
@@ -23,7 +38,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
     ```
 
-1.  **Start developing.**
+2.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
@@ -32,7 +47,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     gatsby develop
     ```
 
-1.  **Open the source code and start editing!**
+3.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
