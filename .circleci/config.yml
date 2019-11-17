@@ -8,8 +8,8 @@ commands:
     steps:
       - checkout
       - run:
-          name: Create GitHub Deployment
-          command: ./tasks/deployment/start.sh > deployment
+          name: Create GitHub Gatsby Deployment
+          command: ./tasks/deployment/gatsby-deploy-start.sh > gatsby_deployment
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
@@ -43,12 +43,12 @@ commands:
           paths:
             - ./storybook-static
       - run:
-          name: Add GitHub Deployment success status
-          command: ./tasks/deployment/end.sh success
+          name: Add GitHub Gatsby Deployment success status
+          command: ./tasks/deployment/gatsby-deploy-end.sh success
           when: on_success
       - run:
-          name: Add GitHub Deployment error status
-          command: ./tasks/deployment/end.sh error
+          name: Add GitHub Gatsby Deployment error status
+          command: ./tasks/deployment/gatsby-deploy-end.sh error
           when: on_fail
 workflows:
   version: 2
