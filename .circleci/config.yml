@@ -42,14 +42,14 @@ commands:
           key: storybook-public-cache-{{ .Branch }}
           paths:
             - ./storybook-static
-      - run:
-          name: Add GitHub Deployment success status
-          command: ./tasks/deployment/end.sh success
-          when: on_success
-      - run:
-          name: Add GitHub Deployment error status
-          command: ./tasks/deployment/end.sh error
-          when: on_fail
+      # - run:
+      #     name: Add GitHub Deployment success status
+      #     command: ./tasks/deployment/end.sh success
+      #     when: on_success
+      # - run:
+      #     name: Add GitHub Deployment error status
+      #     command: ./tasks/deployment/end.sh error
+      #     when: on_fail
 workflows:
   version: 2
   build-deploy:
