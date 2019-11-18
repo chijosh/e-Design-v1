@@ -88,9 +88,9 @@ jobs:
       - run:
           name: Check lint error
           command: yarn lint
-      - run:
-          name: Testing
-          command: yarn ci-test
+  # '      - run:
+  #           name: Testing
+  #           command: yarn ci-test'
 
   release:
     executor: node-executor
@@ -101,9 +101,9 @@ jobs:
       - run:
           name: Check lint error
           command: yarn lint
-      - run:
-          name: Testing
-          command: yarn ci-test
+      # - run:
+      #     name: Testing
+      #     command: yarn ci-test
       - run:
           name: Netlify Deploy Gatsby
           command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=public
