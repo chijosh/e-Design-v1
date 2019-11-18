@@ -6,10 +6,6 @@ executors:
 commands:
   gatsby-build-storybook-build:
     steps:
-      - checkout
-      - run:
-          name: Create GitHub Deployment
-          command: ./tasks/deployment/start.sh > deployment
       - restore_cache:
           keys:
             - yarn-cache-{{ checksum "yarn.lock" }}
@@ -32,24 +28,17 @@ commands:
             - ./public
       - restore_cache:
           keys:
-            - storybook-public-cache-{{ .Branch }}
+            - v1-storybook-public-cache-{{ .Branch }}
       - run:
           name: Storybook Build
           command: yarn build-storybook
       - store_artifacts:
           path: ./storybook-static
       - save_cache:
-          key: storybook-public-cache-{{ .Branch }}
+          key: v1-storybook-public-cache-{{ .Branch }}
           paths:
             - ./storybook-static
-      - run:
-          name: Add GitHub Deployment success status
-          command: ./tasks/deployment/end.sh success
-          when: on_success
-      - run:
-          name: Add GitHub Deployment error status
-          command: ./tasks/deployment/end.sh error
-          when: on_fail
+
 workflows:
   version: 2
   build-deploy:
@@ -69,22 +58,55 @@ jobs:
     executor: node-executor
     working_directory: ~/repo
     steps:
+      - checkout
+      - run:
+          name: Install JQ
+          command: sudo apt-get install jq
+      - run:
+          name: Create GitHub Storybook Deployment
+          command: ./tasks/deployment/storybook-deploy-start.sh > storybook_deployment
+      - run:
+          name: Create GitHub Gatsby Deployment
+          command: ./tasks/deployment/gatsby-deploy-start.sh > gatsby_deployment
       - gatsby-build-storybook-build
+      - run:
+          name: Add GitHub Storybook Deployment success status
+          command: ./tasks/deployment/storybook-deploy-end.sh success
+          when: on_success
+      - run:
+          name: Add GitHub Storybook Deployment error status
+          command: ./tasks/deployment/storybook-deploy-end.sh error
+          when: on_fail
+      - run:
+          name: Add GitHub Gatsby Deployment success status
+          command: ./tasks/deployment/gatsby-deploy-end.sh success
+          when: on_success
+      - run:
+          name: Add GitHub Gatsby Deployment error status
+          command: ./tasks/deployment/gatsby-deploy-end.sh error
+          when: on_fail
       - run:
           name: Check lint error
           command: yarn lint
-      - run:
-          name: Testing
-          command: yarn test -u
+  # '      - run:
+  #           name: Testing
+  #           command: yarn ci-test'
 
   release:
     executor: node-executor
     working_directory: ~/repo
     steps:
+      - checkout
       - gatsby-build-storybook-build
       - run:
           name: Check lint error
           command: yarn lint
-      - run:
-          name: Testing
-          command: yarn test -u
+      # - run:
+      #     name: Testing
+      #     command: yarn ci-test
+      # - run:
+      #     name: Netlify Deploy Gatsby
+      #     command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=public
+      # - run:
+      #     name: Netlify Deploy Storybook
+      #     command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_STORYBOOK --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static

@@ -5,20 +5,21 @@
   "version": "0.1.0",
   "author": "Chi Joshua <chijosh2010@hotmail.com>",
   "dependencies": {
+    "dotenv": "^8.1.0",
     "gatsby": "^2.17.11",
     "gatsby-image": "^2.2.31",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-offline": "^3.0.19",
     "gatsby-plugin-react-helmet": "^3.1.14",
     "gatsby-plugin-sharp": "^2.2.37",
+    "gatsby-plugin-typescript": "^2.1.17",
     "gatsby-source-filesystem": "^2.1.36",
     "gatsby-transformer-sharp": "^2.3.3",
-    "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1"
   },
-    "devDependencies": {
+  "devDependencies": {
     "@babel/core": "^7.6.4",
     "@storybook/addon-a11y": "^5.2.3",
     "@storybook/addon-actions": "^5.2.3",
@@ -33,7 +34,7 @@
     "@testing-library/jest-dom": "^4.1.2",
     "@testing-library/react": "^9.3.0",
     "@types/classnames": "^2.2.9",
-    "@types/jest": "^24.0.18",
+    "@types/jest": "^24.0.23",
     "@types/node": "^12.7.12",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.9.1",
@@ -43,7 +44,6 @@
     "babel-preset-gatsby": "^0.2.19",
     "cross-env": "^6.0.0",
     "css-loader": "^3.2.0",
-    "dotenv": "^8.2.0",
     "gatsby-plugin-tslint": "^0.0.2",
     "husky": "^3.0.5",
     "jest": "^24.9.0",
@@ -70,7 +70,7 @@
     "gatsby"
   ],
   "license": "MIT",
-   "scripts": {
+  "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "tslint-prettier": "tslint-config-prettier-check ./tslint.json",
@@ -80,7 +80,8 @@
     "format": "prettier \"**/*.+(js|jsx|json|ts|tsx|css|scss|md|mdx|graphql)\" --write",
     "start": "yarn run develop",
     "serve": "gatsby serve",
-    "test": "cross-env NODE_ENV=test jest -u",
+    "test": "cross-env NODE_ENV=test jest",
+    "ci-test": "cross-env NODE_ENV=test jest -u -w 2",
     "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -93,4 +94,3 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
-
