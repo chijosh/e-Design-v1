@@ -107,6 +107,6 @@ jobs:
       # - run:
       #     name: Netlify Deploy Gatsby
       #     command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=public
-      - run:
-          name: Netlify Deploy Storybook
-          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_STORYBOOK --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static
+      # - run:
+      #     name: Netlify Deploy Storybook
+      #     command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID_STORYBOOK --auth $NETLIFY_ACCESS_TOKEN --prod --dir=storybook-static
