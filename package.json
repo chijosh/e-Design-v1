@@ -1,7 +1,7 @@
 {
-  "name": "adventure-resort",
+  "name": "e-commerce-v2",
   "private": true,
-  "description": "Adventure Resort Hotel Booking App Built with Gatsby, Storybook, TypeScript, Contentful, GraphQL and Netlify",
+  "description": "An e-commerce App Built with Gatsby, Storybook, TypeScript, Contentful, GraphQL and Netlify",
   "version": "0.1.0",
   "author": "Chi Joshua <chijosh2010@hotmail.com>",
   "dependencies": {
@@ -81,8 +81,6 @@
     "start": "yarn run develop",
     "serve": "gatsby serve",
     "test": "cross-env NODE_ENV=test jest",
-    "ci-test": "cross-env NODE_ENV=test jest -u -w 2",
-    "test:watch": "cross-env NODE_ENV=test jest --watchAll",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
