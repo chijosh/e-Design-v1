@@ -1,13 +1,14 @@
 require('dotenv').config()
 module.exports = {
 	siteMetadata: {
-		title: `e-commerce-v2`,
-		description: `This is an e-commmerce store that allows users to create and manage account, add products to carte and purchase product from the store.`,
+		title: `E-commerce-v2`,
+		description: `This is an e-commerce store that allows users to create and manage account, add products to carte and purchase product from the store.`,
 		author: `@IamChiJosh`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-typescript`,
+		`gatsby-plugin-sass`,
 		{
 			resolve: 'gatsby-plugin-tslint',
 			options: {
@@ -23,6 +24,13 @@ module.exports = {
 			},
 		},
 		`gatsby-transformer-sharp`,
+		// {
+		// 	resolve: `gatsby-plugin-sass`,
+		// 	options: {
+		// 		data:
+		// 			'@import "_variables.scss";@import "_mixins.scss";@import "_layout.scss";@import "_font.scss";',
+		// 		includePaths: ['src/assets/styles'],
+		// 	},
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-manifest`,
