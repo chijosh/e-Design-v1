@@ -1,8 +1,8 @@
 require('dotenv').config()
 module.exports = {
 	siteMetadata: {
-		title: `Adventure Resort`,
-		description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+		title: `e-commerce-v2`,
+		description: `This is an e-commmerce store that allows users to create and manage account, add products to carte and purchase product from the store.`,
 		author: `@IamChiJosh`,
 	},
 	plugins: [
