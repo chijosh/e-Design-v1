@@ -5,15 +5,16 @@ import './menu-item.scss'
 interface Props {
 	title: string
 	imageUrl: string
+	size?: string
 }
 
-const MenuItem = ({ title, imageUrl }: Props) => {
+const MenuItem = ({ title, imageUrl, size }: Props) => {
 	return (
 		<div
 			style={{
 				backgroundImage: `url(${imageUrl})`,
 			}}
-			className="menu-item"
+			className={`${size} menu-item`}
 		>
 			<div className="content">
 				<h1 className="title">{title}</h1>

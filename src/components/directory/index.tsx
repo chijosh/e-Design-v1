@@ -3,12 +3,6 @@ import React, { Component } from 'react'
 import MenuItem from '../menu-item'
 import './directory.scss'
 
-interface Props {
-	title: string
-	id: string
-	imageUrl: string
-}
-
 class Directory extends Component {
 	constructor() {
 		super()
@@ -52,8 +46,8 @@ class Directory extends Component {
 	render() {
 		return (
 			<div className="directory-menu">
-				{this.state.sections.map(({ title, imageUrl, id }: Props) => (
-					<MenuItem key={id} title={title} imageUrl={imageUrl} />
+				{this.state.sections.map(({ title, imageUrl, size, id }: Props) => (
+					<MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
 				))}
 			</div>
 		)
