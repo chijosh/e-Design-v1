@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 interface Props {
-	// /**Site Header Title */
+	/**Header Title */
 	siteTitle: string
 }
 

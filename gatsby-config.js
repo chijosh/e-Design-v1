@@ -1,8 +1,8 @@
 require('dotenv').config()
 module.exports = {
 	siteMetadata: {
-		title: `e-commerce-v2`,
-		description: `This is an e-commmerce store that allows users to create and manage account, add products to carte and purchase product from the store.`,
+		title: `E-commerce-v2`,
+		description: `This is an e-commerce store that allows users to create and manage account, add products to carte and purchase product from the store.`,
 		author: `@IamChiJosh`,
 	},
 	plugins: [
