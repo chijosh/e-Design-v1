@@ -8,6 +8,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-typescript`,
+		`gatsby-plugin-sass`,
 		{
 			resolve: 'gatsby-plugin-tslint',
 			options: {
@@ -23,6 +24,13 @@ module.exports = {
 			},
 		},
 		`gatsby-transformer-sharp`,
+		// {
+		// 	resolve: `gatsby-plugin-sass`,
+		// 	options: {
+		// 		data:
+		// 			'@import "_variables.scss";@import "_mixins.scss";@import "_layout.scss";@import "_font.scss";',
+		// 		includePaths: ['src/assets/styles'],
+		// 	},
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-manifest`,
