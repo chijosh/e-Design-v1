@@ -1,8 +1,9 @@
 import React from 'react'
+import { storiesOf } from '@storybook/react'
+import { text } from '@storybook/addon-knobs'
+
 import Header from '..'
 
-import { storiesOf } from '@storybook/react'
-
 storiesOf('Header', module).add('Default', () => (
-	<Header siteTitle="E-commerce V2" />
+	<Header siteTitle={text('siteTitle', 'E-commerce V2')} />
 ))

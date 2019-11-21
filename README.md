@@ -1,4 +1,8 @@
-s<p align="center">
+[![Netlify Status](https://api.netlify.com/api/v1/badges/db6fd5d1-c4bd-45e3-94a2-44e9225d8517/deploy-status)](https://app.netlify.com/sites/ecommerce-v2/deploys)
+
+[![CircleCI](https://circleci.com/gh/chijosh/ecommerce-v2/tree/develop.svg?style=svg)](https://circleci.com/gh/chijosh/ecommerce-v2/tree/develop)
+
+<p align="center">
 <a href="https://reactjs.org/">
 <img alt="React" src="https://miro.medium.com/max/500/1*cPh7ujRIfcHAy4kW2ADGOw.png" width="100" />
 </a>
