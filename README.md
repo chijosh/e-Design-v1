@@ -1,5 +1,9 @@
+[![Node Version](https://img.shields.io/badge/Node-10.16.0-339933.svg?style=flat&logo=Node.js)]()
+[![React Version](https://img.shields.io/badge/React-16.12.0-61DAFB.svg?style=flat&logo=React)]()
+[![Gatsby Version](https://img.shields.io/badge/Gatsby-2.17.00-663399.svg?style=flat&logo=Gatsby)]()
+[![Typescript Version](https://img.shields.io/badge/TypeScript-3.6.3-007ACC.svg?style=flat&logo=TypeScript)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat&logo=Read-The-Docs)](https://opensource.org/licenses/MIT)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/db6fd5d1-c4bd-45e3-94a2-44e9225d8517/deploy-status)](https://app.netlify.com/sites/ecommerce-v2/deploys)
-
 [![CircleCI](https://circleci.com/gh/chijosh/ecommerce-v2/tree/develop.svg?style=svg)](https://circleci.com/gh/chijosh/ecommerce-v2/tree/develop)
 
 <p align="center">
