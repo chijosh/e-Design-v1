@@ -9,6 +9,9 @@
 <a href="https://www.gatsbyjs.org/">
 <img alt="Gatsby" src="https://codingthesmartway.com/wp-content/uploads/2019/02/gatsby-logo.png" width="100" />
 </a>
+ <a href="https://www.typescriptlang.org/">
+<img alt="TypeScript" src="https://www.typescriptlang.org/assets/images/community/meetup-logos/melbourne.jpg" width="100" />
+</a>
 <a href="https://www.contentful.com/">
 <img alt="Contenful" src="https://avatars1.githubusercontent.com/u/472182?s=280&v=4" width="100" />
 </a>
