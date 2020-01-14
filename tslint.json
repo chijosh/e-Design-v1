@@ -4,6 +4,7 @@
 	"jsRules": {},
 	"rulesDirectory": ["tslint-plugin-prettier"],
 	"rules": {
+		"indent": [true, "spaces"],
 		"prettier": true,
 		"member-access": false,
 		"jsx-boolean-value": false,
@@ -20,6 +21,6 @@
 		"no-boolean-literal-compare": false
 	},
 	"linterOptions": {
-		"exclude": ["node_modules/**/*.ts"]
+		"exclude": ["node_modules/**/*.ts", "build-storybook"]
 	}
 }

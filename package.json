@@ -1,5 +1,5 @@
 {
-  "name": "e-commerce-v2",
+  "name": "e-commerce-v1",
   "private": true,
   "description": "An e-commerce App Built with Gatsby, Storybook, TypeScript, Contentful, GraphQL and Netlify",
   "version": "0.1.0",

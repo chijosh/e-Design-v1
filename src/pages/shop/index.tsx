@@ -7,6 +7,18 @@ interface State {
 	collections: ShopDataArr
 }
 
+interface collections {
+	id: number
+	title: string
+	routeName: string
+	items: {
+		id: number
+		name: string
+		imageUrl: string
+		price: number
+	}
+}
+
 type ShopDataArr = Array<{ node: collections }>
 
 const Shop = () => {
