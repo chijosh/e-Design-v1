@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import './menu-item.scss'
 
 interface Props {
+<<<<<<< Updated upstream
   SectionProps: {
     title: string
     imageUrl: string
@@ -29,6 +30,31 @@ const MenuItem = ({ SectionProps }: Props) => {
       </div>
     </Link>
   )
+=======
+	member: {
+		title: string
+		imageUrl: string
+		size?: string
+	}
+}
+
+const MenuItem = ({ member }: Props) => {
+	const { title, imageUrl, size } = member
+	return (
+		<div className={`${size} menu-item`}>
+			<div
+				className="background-image"
+				style={{
+					backgroundImage: `url(${imageUrl})`,
+				}}
+			/>
+			<div className="content">
+				<h1 className="title">{title.toUpperCase()}</h1>
+				<span className="subtitle">SHOP NOW</span>
+			</div>
+		</div>
+	)
+>>>>>>> Stashed changes
 }
 
 export default MenuItem
