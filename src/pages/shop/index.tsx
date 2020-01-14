@@ -3,6 +3,7 @@ import Shop_Data from './shop.data'
 
 import CollectionPreview from '../../components/collection-preview'
 
+import './Shop.scss'
 interface State {
   collections: Shop_Data
 }
