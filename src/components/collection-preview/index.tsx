@@ -3,15 +3,15 @@ import React from 'react'
 import './collection-preview.scss'
 
 interface Props {
-  otherCollections: {
+  OtherCollections: {
     title: string
     items: []
   }
 }
 
-const CollectionPreview = ({ otherCollections }: Props) => {
-  const { items } = otherCollections
-  // console.log('items', items);
+const CollectionPreview = ({ OtherCollections }: Props) => {
+  const { items } = OtherCollections
+  console.log(OtherCollections)
 
   return (
     <div className="collection-preview">

@@ -4,35 +4,40 @@ import ShopData from './shop.data'
 import CollectionPreview from '../../components/collection-preview'
 
 interface State {
-  collections: ShopDataArr
+  collections: ShopData
 }
 
-interface Collections {
+type ShopData = Array<{
   id: number
   title: string
   routeName: string
-  items: {
-    id: number
-    name: string
-    imageUrl: string
-    price: number
+  items: Items
+}>
+
+type Items = Array<{
+  id: number
+  name: string
+  imageUrl: string
+  price: number
+}>
+class Shop extends React.Component<ShopData, State> {
+  constructor(props: ShopData) {
+    super(props)
+
+    this.state = {
+      collections: [ShopData],
+    }
   }
-}
 
-type ShopDataArr = Array<{ node: Collections }>
-
-const Shop = () => {
-  const [collection, setCollection] = useState<State>({
-    collections: [ShopData],
-  })
-
-  return (
-    <div className="shop-page">
-      {collection.collections.map(({ id, ...otherCollections }) => (
-        <CollectionPreview key={id} otherCollections={otherCollections} />
-      ))}
-    </div>
-  )
+  render() {
+    return (
+      <div className="shop-page">
+        {this.state.collections.map(({ id, ...OtherCollections }) => (
+          <CollectionPreview key={id} otherCollections={OtherCollections} />
+        ))}
+      </div>
+    )
+  }
 }
 
 export default Shop
