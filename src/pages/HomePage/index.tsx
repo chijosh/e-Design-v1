@@ -4,13 +4,13 @@ import Directory from '../../components/directory'
 import './HomePage.scss'
 
 const HomePage = () => {
-	return (
-		<>
-			<div className="homepage">
-				<Directory />
-			</div>
-		</>
-	)
+  return (
+    <>
+      <div className="homepage">
+        <Directory />
+      </div>
+    </>
+  )
 }
 
 export default HomePage
