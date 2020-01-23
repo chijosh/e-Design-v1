@@ -1,0 +1,7 @@
+.shop-page {
+  padding: 20px 60px;
+
+  @include for-phone {
+    padding: 0 $spacing-01;
+  }
+}
