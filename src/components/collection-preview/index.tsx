@@ -5,7 +5,7 @@ import CollectionItem from '../collection-item'
 import './collection-preview.scss'
 
 interface Props {
-  otherCollectionProps: {
+  otherCollection: {
     title: string
     items: []
   }
